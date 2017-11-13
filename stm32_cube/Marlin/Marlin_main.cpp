@@ -785,12 +785,16 @@ void setup_powerhold() {
 #endif
 
 #if !defined(NO_WIFI)
-    //--- Wifi init
+
+//--- Wifi init
 #if defined(PROD_TEST)
     BSP_WifiHwInit(BAUDRATE,WIFI_SSID,WIFI_WEP_KEY,WIFI_FW_VERSION,WIFI_FS_VERSION);
 #else
     BSP_WifiHwInit(BAUDRATE,WIFI_SSID,WIFI_WEP_KEY);
-#endif
+#endif //#if defined(PROD_TEST)
+
+#else
+    BSP_WifiModuleStop();
 #endif //#if !defined(NO_WIFI)
 
     //Extruder 0 Fan init
