@@ -462,3 +462,5 @@
 
 # Debug files
 *.dSYM/
+/stm32_cube/STM32/Projects/SW4STM32/.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/http-cache/segments.gen
+/stm32_cube/STM32/Projects/SW4STM32/.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/http-cache/segments_1

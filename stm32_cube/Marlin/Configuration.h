@@ -108,7 +108,7 @@
 // RASPBERRY PI connected
 // This indicate if a Raspberry Pi is connected to the board and so if the firmware shall wait
 // for it.
-#define RPI_CONNECTED
+#define RPI_CONNECTED_N
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -131,7 +131,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "MarkOne"
+#define CUSTOM_MACHINE_NAME "Bruno Printer"
 
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
@@ -496,7 +496,7 @@
 //    O-- FRONT --+
 //  (0,0)
 #define X_PROBE_OFFSET_FROM_EXTRUDER 22 // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER 22 // Y offset: -front +behind [the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -2 // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0 //  Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/m) between probes
@@ -595,9 +595,9 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 // For Bicephale
-#define INVERT_X_DIR true
+#define INVERT_X_DIR false
 #define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 //#define INVERT_X_DIR false
 //#define INVERT_Y_DIR true
 //#define INVERT_Z_DIR false
@@ -795,9 +795,16 @@
 #define DEFAULT_EJERK                 5.0    // (mm/sec)
 #endif
 
+#if 1 // BDI
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,800,180}  // default steps per unit for prusa i3 rework
+#define DEFAULT_MAX_FEEDRATE          {500, 500, 2, 25}    // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {2000,2000,20,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#else
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,1600,180}  // default steps per unit for ST
 #define DEFAULT_MAX_FEEDRATE          {200, 200, 5, 35}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {2000,2000,100,2000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+#endif
+
 
 #define DEFAULT_ACCELERATION          2000    // X, Y, Z and E acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  0       // E acceleration in mm/s^2 for retracts
