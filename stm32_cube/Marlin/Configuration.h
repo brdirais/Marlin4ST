@@ -795,7 +795,7 @@
 #define DEFAULT_EJERK                 5.0    // (mm/sec)
 #endif
 
-#if 1 // BDI
+#if 0 // BDI
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,800,180}  // default steps per unit for prusa i3 rework
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 2, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {2000,2000,20,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
