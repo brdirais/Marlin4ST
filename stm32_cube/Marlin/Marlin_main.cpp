@@ -897,14 +897,18 @@ void setup() {
     disableStepperDrivers();
 #endif
 
-#if !defined(DEBUG_ONGOING)
-  #if defined(WITH_RPI_DETECTION)
-    BSP_RPiGpioInit();
-    BSP_RPiWaitUntilReady();
-  #elif defined(WAIT_FOR_RPI)
-    HAL_Delay(30000);  //debug elan for raspberry
-  #endif
+//#if !defined(DEBUG_ONGOING)
+//  #if defined(WITH_RPI_DETECTION)
+//    BSP_RPiGpioInit();
+//    BSP_RPiWaitUntilReady();
+//  #elif defined(WAIT_FOR_RPI)
+//    HAL_Delay(30000);  //debug elan for raspberry
+//  #endif
+//#endif
+#if defined(WAIT_FOR_BPI)
+		HAL_Delay(20000);  //debug elan for raspberry
 #endif
+
 
     BSP_UartHwInit(BAUDRATE);
     BSP_UartIfStart();
