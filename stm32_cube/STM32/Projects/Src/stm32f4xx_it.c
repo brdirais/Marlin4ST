@@ -42,7 +42,7 @@
 #include "motorcontrol.h"
 #include "stm32f4xx_3dprinter_uart.h"
 #include "stm32f4xx_3dprinter_sd.h"
-
+    
 /** @addtogroup Interrupt_Handlers
   * @{
   */
@@ -64,7 +64,6 @@ extern TIM_HandleTypeDef hTimServo;
 
 extern BspAdcDataType gBspAdcData;
 extern BspWifiDataType gBspWifiData;
-
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -168,11 +167,8 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-	HAL_IncTick();
-
-	HAL_SYSTICK_IRQHandler();
+  HAL_IncTick();
 }
-
 
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */

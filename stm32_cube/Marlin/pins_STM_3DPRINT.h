@@ -34,15 +34,19 @@
 #define X_STEP_PIN         0
 #define X_DIR_PIN          1
 #define X_ENABLE_PIN       -1
-#define X_MIN_PIN          3
-#define X_MAX_PIN          -1
+#define X_MIN_PIN          -1
+#define X_MAX_PIN          4
 
 #define Y_STEP_PIN         5
 #define Y_DIR_PIN          6
 #define Y_ENABLE_PIN       -1
-#define Y_MIN_PIN          -1
-#define Y_MAX_PIN          8
-
+#if defined(BICEPHALE)
+  #define Y_MIN_PIN          9
+  #define Y_MAX_PIN          -1
+#else
+  #define Y_MIN_PIN          8
+  #define Y_MAX_PIN          -1
+#endif
 
 #define Z_STEP_PIN         10
 #define Z_DIR_PIN          11

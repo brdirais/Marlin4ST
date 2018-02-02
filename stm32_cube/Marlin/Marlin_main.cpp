@@ -785,16 +785,12 @@ void setup_powerhold() {
 #endif
 
 #if !defined(NO_WIFI)
-
-//--- Wifi init
+    //--- Wifi init
 #if defined(PROD_TEST)
     BSP_WifiHwInit(BAUDRATE,WIFI_SSID,WIFI_WEP_KEY,WIFI_FW_VERSION,WIFI_FS_VERSION);
 #else
     BSP_WifiHwInit(BAUDRATE,WIFI_SSID,WIFI_WEP_KEY);
-#endif //#if defined(PROD_TEST)
-
-#else
-    BSP_WifiModuleStop();
+#endif
 #endif //#if !defined(NO_WIFI)
 
     //Extruder 0 Fan init
@@ -897,18 +893,14 @@ void setup() {
     disableStepperDrivers();
 #endif
 
-//#if !defined(DEBUG_ONGOING)
-//  #if defined(WITH_RPI_DETECTION)
-//    BSP_RPiGpioInit();
-//    BSP_RPiWaitUntilReady();
-//  #elif defined(WAIT_FOR_RPI)
-//    HAL_Delay(30000);  //debug elan for raspberry
-//  #endif
-//#endif
-#if defined(WAIT_FOR_BPI)
-		HAL_Delay(20000);  //debug elan for raspberry
+#if !defined(DEBUG_ONGOING)
+  #if defined(WITH_RPI_DETECTION)
+    BSP_RPiGpioInit();
+    BSP_RPiWaitUntilReady();
+  #elif defined(WAIT_FOR_RPI)
+    HAL_Delay(30000);  //debug elan for raspberry
+  #endif
 #endif
-
 
     BSP_UartHwInit(BAUDRATE);
     BSP_UartIfStart();

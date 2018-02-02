@@ -176,7 +176,6 @@ void BSP_WifiHwInit(uint32_t baudRate, char* ssid, char* wepKey, char* expectedF
 #else
 void BSP_WifiHwInit(uint32_t baudRate, char* ssid, char* wepKey);
 #endif
-void BSP_WifiModuleStop(void);
 uint8_t BSP_WifiUartRxCpltCallback(UART_HandleTypeDef *UartHandle,\
   unsigned char **c);
 void BSP_WifiUartTxCpltCallback(UART_HandleTypeDef *UartHandle);

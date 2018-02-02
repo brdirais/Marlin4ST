@@ -146,14 +146,18 @@
 #else //#ifndef MARLIN
 // Current value that is assigned to the torque regulation DAC
 /// TVAL register value for device 0 (range 31.25mA to 4000mA)
-#define L6474_CONF_PARAM_TVAL_DEVICE_0  (750)
+#define L6474_CONF_PARAM_TVAL_DEVICE_0  (1200)
 /// TVAL register value for device 1 (range 31.25mA to 4000mA)
-#define L6474_CONF_PARAM_TVAL_DEVICE_1  (875)
+#define L6474_CONF_PARAM_TVAL_DEVICE_1  (2000)
 /// TVAL register value for device 2 (range 31.25mA to 4000mA)
-#define L6474_CONF_PARAM_TVAL_DEVICE_2 (1500)
-//#define L6474_CONF_PARAM_TVAL_DEVICE_2 (750)
+#if defined(BICEPHALE)
+//#define L6474_CONF_PARAM_TVAL_DEVICE_2 (950)   --BDI--
+#define L6474_CONF_PARAM_TVAL_DEVICE_2 (1500) // ANCIENNEMENT 1500
+#else   
+#define L6474_CONF_PARAM_TVAL_DEVICE_2 (750)
+#endif
 /// TVAL register value for device 3 (range 31.25mA to 4000mA)
-#define L6474_CONF_PARAM_TVAL_DEVICE_3 (750)
+#define L6474_CONF_PARAM_TVAL_DEVICE_3 (875)
 /// TVAL register value for device 4 (range 31.25mA to 4000mA)
 #define L6474_CONF_PARAM_TVAL_DEVICE_4  (750)
 /// TVAL register value for device 5 (range 31.25mA to 4000mA)
@@ -225,14 +229,17 @@
 /******************************* Others ***************************************/
 
 /// Overcurrent threshold settings for device 0 (OCD_TH register)
-#define L6474_CONF_PARAM_OCD_TH_DEVICE_0  (L6474_OCD_TH_1125mA)
+#define L6474_CONF_PARAM_OCD_TH_DEVICE_0  (L6474_OCD_TH_2625mA)
 /// Overcurrent threshold settings for device 1 (OCD_TH register)
-#define L6474_CONF_PARAM_OCD_TH_DEVICE_1  (L6474_OCD_TH_1125mA)
+#define L6474_CONF_PARAM_OCD_TH_DEVICE_1  (L6474_OCD_TH_2625mA)
 /// Overcurrent threshold settings for device 2 (OCD_TH register)
-#define L6474_CONF_PARAM_OCD_TH_DEVICE_2  (L6474_OCD_TH_2250mA)
-//#define L6474_CONF_PARAM_OCD_TH_DEVICE_2  (L6474_OCD_TH_1125mA)
+#if defined(BICEPHALE)
+#define L6474_CONF_PARAM_OCD_TH_DEVICE_2  (L6474_OCD_TH_2625mA)
+#else   
+#define L6474_CONF_PARAM_OCD_TH_DEVICE_2  (L6474_OCD_TH_1125mA)
+#endif
 /// Overcurrent threshold settings for device 3 (OCD_TH register)
-#define L6474_CONF_PARAM_OCD_TH_DEVICE_3  (L6474_OCD_TH_1125mA)    
+#define L6474_CONF_PARAM_OCD_TH_DEVICE_3  (L6474_OCD_TH_1125mA)
 /// Overcurrent threshold settings for device 4 (OCD_TH register)
 #define L6474_CONF_PARAM_OCD_TH_DEVICE_4  (L6474_OCD_TH_1125mA)        
 /// Overcurrent threshold settings for device 5 (OCD_TH register)

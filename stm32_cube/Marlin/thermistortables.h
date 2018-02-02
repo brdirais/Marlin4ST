@@ -31,7 +31,6 @@
 #define ANY_THERMISTOR_IS(n) (THERMISTORHEATER_0 == n || THERMISTORHEATER_1 == n || THERMISTORHEATER_2 == n || THERMISTORHEATER_3 == n || THERMISTORBED == n)
 
 #if ANY_THERMISTOR_IS(1) // 100k bed thermistor
-#if 1 // BDI
 const short temptable_1[][2] PROGMEM = {
   {   23 * OVERSAMPLENR, 300 },
   {   25 * OVERSAMPLENR, 295 },
@@ -95,38 +94,6 @@ const short temptable_1[][2] PROGMEM = {
   { 1004 * OVERSAMPLENR,   5 },
   { 1008 * OVERSAMPLENR,   0 } // safety
 };
-#else  // BDI
-const short temptable_1[][2]  PROGMEM = {
-{       81*OVERSAMPLENR         ,       267     },
-{       102*OVERSAMPLENR        ,       251     },
-{       113*OVERSAMPLENR        ,       245     },
-{       123*OVERSAMPLENR        ,       239     },
-{       134*OVERSAMPLENR        ,       234     },
-{       145*OVERSAMPLENR        ,       229     },
-{       166*OVERSAMPLENR        ,       221     },
-{       183*OVERSAMPLENR        ,       214     },
-{       200*OVERSAMPLENR        ,       208     },
-{       213*OVERSAMPLENR        ,       204     },
-{       232*OVERSAMPLENR        ,       199     },
-{       295*OVERSAMPLENR        ,       180     },
-{       332*OVERSAMPLENR        ,       177     },
-{       379*OVERSAMPLENR        ,       163     },
-{       435*OVERSAMPLENR        ,       150     },
-{       492*OVERSAMPLENR        ,       140     },
-{       562*OVERSAMPLENR        ,       130     },
-{       641*OVERSAMPLENR        ,       117     },
-{       848*OVERSAMPLENR        ,       85      },
-{       940*OVERSAMPLENR        ,       74      },
-{       962*OVERSAMPLENR        ,       66      },
-{       979*OVERSAMPLENR        ,       57      },
-{       994*OVERSAMPLENR        ,       48      },
-{       1000*OVERSAMPLENR       ,       41      },
-{       1012*OVERSAMPLENR       ,       26      },
-{       1014*OVERSAMPLENR       ,       22      },
-{       1016*OVERSAMPLENR       ,       17      },
-{       1018*OVERSAMPLENR       ,       0       } //safety
-};
-#endif   // BDI
 #endif
 
 #if ANY_THERMISTOR_IS(2) // 200k bed thermistor
@@ -786,7 +753,6 @@ const short temptable_20[][2] PROGMEM = {
 };
 #endif
 
-
 #if ANY_THERMISTOR_IS(23)
 // ST EVALR3DPRINT_V1 board with E3Dv6 Semitec thermistance
 const short temptable_23[][2]  PROGMEM = {
@@ -1053,33 +1019,33 @@ const short temptable_60[][2] PROGMEM = {
 #if ANY_THERMISTOR_IS(66)
 // DyzeDesign 500°C Thermistor
 const short temptable_66[][2] PROGMEM = {
-  {   (short)( (float)17.5 * (float)OVERSAMPLENR), 850 },
-  {   (short)( (float) 17.9 * (float)OVERSAMPLENR), 500 },
-  {   (short)( (float) 21.7 * (float)OVERSAMPLENR), 480 },
-  {   (short)( (float) 26.6 * (float)OVERSAMPLENR), 460 },
-  {   (short)( (float) 33.1 * (float)OVERSAMPLENR), 440 },
-  {   (short)( (float) 41.0 * (float)OVERSAMPLENR), 420 },
-  {   (short)( (float) 52.3 * (float)OVERSAMPLENR), 400 },
-  {   (short)( (float) 67.7 * (float)OVERSAMPLENR), 380 },
-  {   (short)( (float) 86.5 * (float)OVERSAMPLENR), 360 },
-  {   (short)( (float)112.0 * (float)OVERSAMPLENR), 340 },
-  {   (short)( (float)147.2 * (float)OVERSAMPLENR), 320 },
-  {   (short)( (float)194.0 * (float)OVERSAMPLENR), 300 },
-  {   (short)( (float)254.3 * (float)OVERSAMPLENR), 280 },
-  {   (short)( (float)330.2 * (float)OVERSAMPLENR), 260 },
-  {   (short)( (float)427.9 * (float)OVERSAMPLENR), 240 },
-  {   (short)( (float)533.4 * (float)OVERSAMPLENR), 220 },
-  {   (short)( (float)646.5 * (float)OVERSAMPLENR), 200 },
-  {   (short)( (float)754.4 * (float)OVERSAMPLENR), 180 },
-  {   (short)( (float)844.3 * (float)OVERSAMPLENR), 160 },
-  {   (short)( (float)911.7 * (float)OVERSAMPLENR), 140 },
-  {   (short)( (float)958.6 * (float)OVERSAMPLENR), 120 },
-  {   (short)( (float)988.8 * (float)OVERSAMPLENR), 100 },
-  {   (short)( (float)1006.6 * (float)OVERSAMPLENR),  80 },
-  {   (short)( (float)1015.8 * (float)OVERSAMPLENR),  60 },
-  {   (short)( (float)1021.3 * (float)OVERSAMPLENR),  30 },
-  {   (short)( (float)1023 * (float)OVERSAMPLENR) - 1, 25},
-  {   (short)( (float)1023 * (float)OVERSAMPLENR),  20}
+  { (const short)(  17.5 * (float)OVERSAMPLENR), 850 },
+  { (const short)(  17.9 * (float)OVERSAMPLENR), 500 },
+  { (const short)(  21.7 * (float)OVERSAMPLENR), 480 },
+  { (const short)(  26.6 * (float)OVERSAMPLENR), 460 },
+  { (const short)(  33.1 * (float)OVERSAMPLENR), 440 },
+  { (const short)(  41.0 * (float)OVERSAMPLENR), 420 },
+  { (const short)(  52.3 * (float)OVERSAMPLENR), 400 },
+  { (const short)(  67.7 * (float)OVERSAMPLENR), 380 },
+  { (const short)(  86.5 * (float)OVERSAMPLENR), 360 },
+  { (const short)( 112.0 * (float)OVERSAMPLENR), 340 },
+  { (const short)( 147.2 * (float)OVERSAMPLENR), 320 },
+  { (const short)( 194.0 * (float)OVERSAMPLENR), 300 },
+  { (const short)( 254.3 * (float)OVERSAMPLENR), 280 },
+  { (const short)( 330.2 * (float)OVERSAMPLENR), 260 },
+  { (const short)( 427.9 * (float)OVERSAMPLENR), 240 },
+  { (const short)( 533.4 * (float)OVERSAMPLENR), 220 },
+  { (const short)( 646.5 * (float)OVERSAMPLENR), 200 },
+  { (const short)( 754.4 * (float)OVERSAMPLENR), 180 },
+  { (const short)( 844.3 * (float)OVERSAMPLENR), 160 },
+  { (const short)( 911.7 * (float)OVERSAMPLENR), 140 },
+  { (const short)( 958.6 * (float)OVERSAMPLENR), 120 },
+  { (const short)( 988.8 * (float)OVERSAMPLENR), 100 },
+  { (const short)(1006.6 * (float)OVERSAMPLENR),  80 },
+  { (const short)(1015.8 * (float)OVERSAMPLENR),  60 },
+  { (const short)(1021.3 * (float)OVERSAMPLENR),  30 },
+  { (const short)(  1023 * (float)OVERSAMPLENR) - 1, 25},
+  { (const short)(  1023 * (float)OVERSAMPLENR),  20}
 };
 #endif
 

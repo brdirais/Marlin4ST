@@ -140,25 +140,6 @@ void BSP_WifiHwInit(uint32_t baudRate, char* ssid, char* wepKey)
 #endif //#else //#if defined(PROD_TEST)
 
 /******************************************************//**
- * @brief  Stop the WIFI module
- * @param None
- * @retval None
- **********************************************************/
-void BSP_WifiModuleStop(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct;
-
-  GPIO_InitStruct.Pin = BSP_WIFI_RESET_PIN;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_MEDIUM;
-  HAL_GPIO_Init(BSP_WIFI_RESET_PORT, &GPIO_InitStruct);
-
-  /* To stop the wifi module, we keep it in reset state */
-  HAL_GPIO_WritePin(BSP_WIFI_RESET_PORT, BSP_WIFI_RESET_PIN, GPIO_PIN_RESET);
-}
-
-/******************************************************//**
  * @brief  Initialisation of the GPIOs for WIFI module
  * @param None
  * @retval None
@@ -606,7 +587,7 @@ uint8_t BSP_WifiParseTxBytes(const char* pBuffer, uint16_t nbTxBytes,\
             /* The reply is stored in an intermediate buffer until the        */
             /* running of the input.cgi script has been detected              */
             strncpy(previousString, pBuffer, nbTxBytes);
-            /* As stated in SPWF01Sx ï¿½ Dynamic Web Pages application note,    */
+            /* As stated in SPWF01Sx – Dynamic Web Pages application note,    */
             /* the message terminator must be <CR>.                           */
             previousString[nbTxBytes]='\r';
             previousString[nbTxBytes+1]='\0';
