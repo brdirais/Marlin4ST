@@ -103,7 +103,6 @@ void BSP_MotorControlBoard_PwmZSetFreq(uint16_t newFreq); //Set PWM_Z frequency 
 void BSP_MotorControlBoard_PwmE1SetFreq(uint16_t newFreq); //Set PWM_E1 frequency and start it
 void BSP_MotorControlBoard_PwmE2SetFreq(uint16_t newFreq); //Set PWM_E2 frequency and start it
 void BSP_MotorControlBoard_PwmE3SetFreq(uint16_t newFreq); //Set PWM_E3 frequency and start it
-void BSP_MotorControlBoard_PwmE4SetFreq(uint16_t newFreq); //Set PWM_E4 frequency and start it
 void BSP_MotorControlBoard_PwmInit(uint8_t deviceId);    //Init the PWM of the specified device
 void BSP_MotorControlBoard_PwmStop(uint8_t deviceId);    //Stop the PWM of the specified device
 void BSP_MotorControlBoard_ReleaseReset(void);           //Reset the L6474 reset pin 
