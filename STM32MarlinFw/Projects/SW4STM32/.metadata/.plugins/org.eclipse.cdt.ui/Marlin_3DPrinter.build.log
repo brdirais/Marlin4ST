@@ -1,0 +1,6 @@
+09:37:13 **** Clean-only build of configuration Debug for project Marlin_3DPrinter ****
+make clean 
+make: *** No rule to make target `clean'.  Stop.
+
+09:37:14 Build Finished (took 66ms)
+

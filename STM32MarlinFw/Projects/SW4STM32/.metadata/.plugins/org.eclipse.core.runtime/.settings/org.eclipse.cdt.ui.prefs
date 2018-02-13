@@ -1,0 +1,9 @@
+MemberFilterActionGroup.COutlineViewer.16=true
+MemberFilterActionGroup.COutlineViewer.4=true
+content_assist_disabled_computers=org.eclipse.cdt.ui.parserProposalCategory\u0000org.eclipse.cdt.ui.textProposalCategory\u0000
+eclipse.preferences.version=1
+org.eclipse.cdt.ui.outline.groupmembers=true
+scalability.reconciler=false
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

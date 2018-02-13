@@ -1,0 +1,21 @@
+23:08:50 **** Incremental Build of configuration Debug for project Marlin_3DPrinter ****
+make all 
+Building file: /media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.c
+Invoking: MCU GCC Compiler
+/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/Marlin_3DPrinter/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DWITH_RPI_DETECTION__N -DBICEPHALE -DNO_SD_WIDE_BUS -DSTM32F401xE -DSTM_3DPRINT -DMARLIN -DNO_WIFI -DDEBUG_ONGOING__N -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../Inc -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/BSP/Components/Common -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/STM32F4xx_HAL_Driver/Inc -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/CMSIS/Include -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/BSP/STM32F4xx-3dPrinter -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/BSP/MotorControl -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../Drivers/BSP/Components/l6474 -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../FatFs/src -I/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/../../../Marlin -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.d" -MT"STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.o" -o "STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.o" "/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.c"
+/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.c: In function 'BSP_MotorControlBoard_SpiWriteBytes':
+/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.c:589:10: warning: 'status' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   return (uint8_t) status;
+          ^~~~~~~~~~~~~~~~
+Finished building: /media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Drivers/BSP/STM32F4xx-3dPrinter/stm32f4xx_3dprinter_motor.c
+ 
+Building target: Marlin.elf
+Invoking: MCU G++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"/media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/Marlin_3DPrinter/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "Marlin.elf" @"objects.list"   -lm
+Finished building target: Marlin.elf
+ 
+make --no-print-directory post-build
+Generate binary
+arm-none-eabi-objcopy -O binary "Marlin.elf" "Marlin.bin"
+ 

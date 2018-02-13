@@ -1,0 +1,3 @@
+buildConsole/keepLog=true
+buildConsole/logLocation=/local/home/brdirais/Development/03-MotionControl/04-GIT_IPC_SW/STM32/St3dPrinter_GitHub/Marlin4ST/stm32_cube/STM32/Projects/SW4STM32/.metadata/.plugins/org.eclipse.cdt.ui/Marlin_3DPrinter.build.log
+eclipse.preferences.version=1
