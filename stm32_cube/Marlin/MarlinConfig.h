@@ -49,8 +49,9 @@
 #include "stm32f4xx_3dprinter_rpi.h"
 #endif
 #include "motorcontrol.h"
+#ifdef USE_FAT
 #include "ff.h" /* for FATS and FIL*/
-
+#endif
 // -STM32
 
 #include "Conditionals_post.h"
