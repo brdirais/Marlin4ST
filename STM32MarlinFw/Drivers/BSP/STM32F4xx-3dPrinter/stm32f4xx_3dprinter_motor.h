@@ -105,7 +105,9 @@
 #define BSP_MOTOR_CONTROL_BOARD_AFx_TIMx_PWM_Y                 (GPIO_AF1_TIM2)
 /// PWM_Y frequency rescaler (1 for HW PWM, 2 for SW PWM)
 #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_Y_FREQ_RESCALER           (1)    
-   
+
+#ifdef LAST_DRIVER_FOR_Z
+
 /// Timer used for PWM_E3
 #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E3                   (TIM3)
 /// Channel Timer used for PWM_E3
@@ -122,6 +124,27 @@
 #define BSP_MOTOR_CONTROL_BOARD_AFx_TIMx_PWM_E3                (GPIO_AF2_TIM3)
 /// PWM_E3 frequency rescaler (1 for HW PWM, 2 for SW PWM)
 #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E3_FREQ_RESCALER     (1)
+
+#else
+
+/// Timer used for PWM_Z
+#define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_Z                   (TIM3)
+/// Channel Timer used for PWM_Z
+#define BSP_MOTOR_CONTROL_BOARD_CHAN_TIMER_PWM_Z              (TIM_CHANNEL_1)
+/// HAL Active Channel Timer used for PWM_Z
+#define BSP_MOTOR_CONTROL_BOARD_HAL_ACT_CHAN_TIMER_PWM_Z      (HAL_TIM_ACTIVE_CHANNEL_1)
+/// Timer Clock Enable for PWM_Z
+#define __BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_Z_CLCK_ENABLE()    __TIM3_CLK_ENABLE()
+/// Timer Clock Disable for PWM_Z
+#define __BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_Z_CLCK_DISABLE()   __TIM3_CLK_DISABLE()
+/// PWM_Z global interrupt
+#define BSP_MOTOR_CONTROL_BOARD_PWM_Z_IRQn              (TIM3_IRQn)
+/// PWM_Z GPIO alternate function
+#define BSP_MOTOR_CONTROL_BOARD_AFx_TIMx_PWM_Z                (GPIO_AF2_TIM3)
+/// PWM_Z frequency rescaler (1 for HW PWM, 2 for SW PWM)
+#define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_Z_FREQ_RESCALER     (1)
+
+#endif
 
 /// Timer used for PWM_E1
 #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E1                  (TIM4)
@@ -157,6 +180,8 @@
 /// PWM_E2 frequency rescaler (1 for HW PWM, 2 for SW PWM)   
 #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E2_FREQ_RESCALER    (1)   
 
+#ifdef LAST_DRIVER_FOR_Z
+
 /// Timer used for PWM_Z
 #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_Z                  (TIM10)
 /// Channel Timer used for PWM_Z
@@ -173,7 +198,29 @@
 #define BSP_MOTOR_CONTROL_BOARD_AFx_TIMx_PWM_Z               (GPIO_AF3_TIM10)
 /// PWM_Z frequency rescaler (1 for HW PWM, 2 for SW PWM)
 #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_Z_FREQ_RESCALER    (1)
-  
+
+#else
+
+ /// Timer used for PWM_E3
+ #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E3                  (TIM10)
+ /// Channel Timer used for PWM_E3
+ #define BSP_MOTOR_CONTROL_BOARD_CHAN_TIMER_PWM_E3             (TIM_CHANNEL_1)
+ /// HAL Active Channel Timer used for PWM_E3
+ #define BSP_MOTOR_CONTROL_BOARD_HAL_ACT_CHAN_TIMER_PWM_E3     (HAL_TIM_ACTIVE_CHANNEL_1)
+ /// Timer Clock Enable for PWM_E3
+ #define __BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E3_CLCK_ENABLE()  __TIM10_CLK_ENABLE()
+ /// Timer Clock Disable for PWM_E3
+ #define __BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E3_CLCK_DISABLE() __TIM10_CLK_DISABLE()
+ /// PWM_E3 global interrupt
+ #define BSP_MOTOR_CONTROL_BOARD_PWM_E3_IRQn             (TIM1_UP_TIM10_IRQn)
+ /// PWM_E3 GPIO alternate function
+ #define BSP_MOTOR_CONTROL_BOARD_AFx_TIMx_PWM_E3               (GPIO_AF3_TIM10)
+ /// PWM_E3 frequency rescaler (1 for HW PWM, 2 for SW PWM)
+ #define BSP_MOTOR_CONTROL_BOARD_TIMER_PWM_E3_FREQ_RESCALER    (1)
+
+#endif
+
+
  /**
 * @}
 */
@@ -201,11 +248,22 @@
 /// GPIO port used for the L6474 step clock pin of device 1
 #define BSP_MOTOR_CONTROL_BOARD_PWM_Y_PORT  (GPIOB)
   
+#ifdef LAST_DRIVER_FOR_Z
+
 /// GPIO Pin used for the L6474 step clock pin of device 2
 #define BSP_MOTOR_CONTROL_BOARD_PWM_Z_PIN  (GPIO_PIN_8) // (GPIO_PIN_6)
 /// GPIO port used for the L6474 step clock pin of device 2
 #define BSP_MOTOR_CONTROL_BOARD_PWM_Z_PORT  (GPIOB) // (GPIOC)
-   
+
+#else
+
+ /// GPIO Pin used for the L6474 step clock pin of device 2
+ #define BSP_MOTOR_CONTROL_BOARD_PWM_E3_PIN  (GPIO_PIN_8) // (GPIO_PIN_6)
+ /// GPIO port used for the L6474 step clock pin of device 2
+ #define BSP_MOTOR_CONTROL_BOARD_PWM_E3_PORT  (GPIOB) // (GPIOC)
+
+#endif
+
 /// GPIO Pin used for the L6474 step clock pin of device 3
 #define BSP_MOTOR_CONTROL_BOARD_PWM_E1_PIN   (GPIO_PIN_12)
 /// GPIO port used for the L6474 step clock pin of device 3
@@ -216,11 +274,23 @@
 /// GPIO port used for the L6474 step clock pin of device 4
 #define BSP_MOTOR_CONTROL_BOARD_PWM_E2_PORT  (GPIOE)
 
+#ifdef LAST_DRIVER_FOR_Z
+
 /// GPIO Pin used for the L6474 step clock pin of device 5
 #define BSP_MOTOR_CONTROL_BOARD_PWM_E3_PIN   (GPIO_PIN_6) // (GPIO_PIN_8)
 /// GPIO port used for the L6474 step clock pin of device 5
 #define BSP_MOTOR_CONTROL_BOARD_PWM_E3_PORT  (GPIOC) // (GPIOB)
-   
+
+#else
+
+ /// GPIO Pin used for the L6474 step clock pin of device 5
+ #define BSP_MOTOR_CONTROL_BOARD_PWM_Z_PIN   (GPIO_PIN_6) // (GPIO_PIN_8)
+ /// GPIO port used for the L6474 step clock pin of device 5
+ #define BSP_MOTOR_CONTROL_BOARD_PWM_Z_PORT  (GPIOC) // (GPIOB)
+
+#endif
+
+
 /// GPIO Pin used for the L6474 direction pin of device 0                      *
 #define BSP_MOTOR_CONTROL_BOARD_DIR_X_PIN  (GPIO_PIN_15)
 /// GPIO port used for the L6474 direction pin of device 0                     *
@@ -231,10 +301,22 @@
 /// GPIO port used for the L6474 direction pin of device 1                     *
 #define BSP_MOTOR_CONTROL_BOARD_DIR_Y_PORT  (GPIOE)
 
+#ifdef LAST_DRIVER_FOR_Z
+
 /// GPIO Pin used for the L6474 direction pin of device 2                      *
 #define BSP_MOTOR_CONTROL_BOARD_DIR_Z_PIN   (GPIO_PIN_2) // (GPIO_PIN_0)
 /// GPIO port used for the L6474 direction pin of device 2                     *
 #define BSP_MOTOR_CONTROL_BOARD_DIR_Z_PORT  (GPIOE) // (GPIOC)
+
+#else
+
+ /// GPIO Pin used for the L6474 direction pin of device 2                      *
+ #define BSP_MOTOR_CONTROL_BOARD_DIR_E3_PIN   (GPIO_PIN_2) // (GPIO_PIN_0)
+ /// GPIO port used for the L6474 direction pin of device 2                     *
+ #define BSP_MOTOR_CONTROL_BOARD_DIR_E3_PORT  (GPIOE) // (GPIOC)
+
+#endif
+
 
 /// GPIO Pin used for the L6474 direction pin of device 3                      *
 #define BSP_MOTOR_CONTROL_BOARD_DIR_E1_PIN   (GPIO_PIN_13)
@@ -246,11 +328,23 @@
 /// GPIO port used for the L6474 direction pin of device 4
 #define BSP_MOTOR_CONTROL_BOARD_DIR_E2_PORT  (GPIOE)      
 
+
+#ifdef LAST_DRIVER_FOR_Z
+
 /// GPIO Pin used for the L6474 direction pin of device 5
 #define BSP_MOTOR_CONTROL_BOARD_DIR_E3_PIN   (GPIO_PIN_0) // (GPIO_PIN_2)
 /// GPIO port used for the L6474 direction pin of device 5
 #define BSP_MOTOR_CONTROL_BOARD_DIR_E3_PORT  (GPIOC) //(GPIOE)
-   
+
+#else
+
+ /// GPIO Pin used for the L6474 direction pin of device 5
+ #define BSP_MOTOR_CONTROL_BOARD_DIR_Z_PIN   (GPIO_PIN_0) // (GPIO_PIN_2)
+ /// GPIO port used for the L6474 direction pin of device 5
+ #define BSP_MOTOR_CONTROL_BOARD_DIR_Z_PORT  (GPIOC) //(GPIOE)
+
+#endif
+
 /// GPIO Pin used for the L6474 reset pin (device 0)                           *
 #define BSP_MOTOR_CONTROL_BOARD_RESET_X_PIN  (GPIO_PIN_13)
 /// GPIO port used for the L6474 reset  (device 0)                             *
@@ -261,11 +355,23 @@
 /// GPIO port used for the L6474 reset pin (device 1)                          *
 #define BSP_MOTOR_CONTROL_BOARD_RESET_Y_PORT (GPIOE)   
 
+#ifdef LAST_DRIVER_FOR_Z
+
 /// GPIO Pin used for the L6474 reset pin (device 2)                           *
 #define BSP_MOTOR_CONTROL_BOARD_RESET_Z_PIN  (GPIO_PIN_3) // (GPIO_PIN_15)
 /// GPIO port used for the L6474 reset pin (device 2)                          *
 #define BSP_MOTOR_CONTROL_BOARD_RESET_Z_PORT (GPIOE) // (GPIOC)
-   
+
+#else
+
+ /// GPIO Pin used for the L6474 reset pin (device 2)                           *
+ #define BSP_MOTOR_CONTROL_BOARD_RESET_E3_PIN  (GPIO_PIN_3) // (GPIO_PIN_15)
+ /// GPIO port used for the L6474 reset pin (device 2)                          *
+ #define BSP_MOTOR_CONTROL_BOARD_RESET_E3_PORT (GPIOE) // (GPIOC)
+
+#endif
+
+
 /// GPIO Pin used for the L6474 reset pin (device 3)                           *
 #define BSP_MOTOR_CONTROL_BOARD_RESET_E1_PIN  (GPIO_PIN_14)
 /// GPIO port used for the L6474 reset pin (device 3)                          *
@@ -276,11 +382,22 @@
 /// GPIO port used for the L6474 reset pin (device 4)
 #define BSP_MOTOR_CONTROL_BOARD_RESET_E2_PORT (GPIOE)  
 
+#ifdef LAST_DRIVER_FOR_Z
+
 /// GPIO Pin used for the L6474 reset pin (device 5)
 #define BSP_MOTOR_CONTROL_BOARD_RESET_E3_PIN  (GPIO_PIN_15) // (GPIO_PIN_3)
 /// GPIO port used for the L6474 reset pin (device 5)
 #define BSP_MOTOR_CONTROL_BOARD_RESET_E3_PORT (GPIOC) // (GPIOE)
-   
+
+#else
+
+ /// GPIO Pin used for the L6474 reset pin (device 5)
+ #define BSP_MOTOR_CONTROL_BOARD_RESET_Z_PIN  (GPIO_PIN_15) // (GPIO_PIN_3)
+ /// GPIO port used for the L6474 reset pin (device 5)
+ #define BSP_MOTOR_CONTROL_BOARD_RESET_Z_PORT (GPIOC) // (GPIOE)
+
+#endif
+
 /// GPIO Pin used for the L6474 SPI chip select pin
 #define BSP_MOTOR_CONTROL_BOARD_CS_PIN  (GPIO_PIN_4)
 /// GPIO port used for the L6474 SPI chip select  pin

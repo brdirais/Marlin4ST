@@ -745,6 +745,9 @@ void HAL_ADC_IRQHandler(ADC_HandleTypeDef* hadc)
     __HAL_ADC_CLEAR_FLAG(hadc,ADC_FLAG_JEOC);
   }
   
+  // BDI
+  //return;
+
   tmp1 = __HAL_ADC_GET_FLAG(hadc, ADC_FLAG_AWD);
   tmp2 = __HAL_ADC_GET_IT_SOURCE(hadc, ADC_IT_AWD);                          
   /* Check Analog watchdog flag */

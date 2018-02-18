@@ -274,6 +274,8 @@ void TIM1_BRK_TIM9_IRQHandler(void)
   */
 void TIM1_UP_TIM10_IRQHandler(void)  
 {
+  HAL_TIM_IRQHandler(&hTimPwmZ);
+//return;
 #ifdef MARLIN
   HAL_TIM_IRQHandler(&hTimServo);
 #else  

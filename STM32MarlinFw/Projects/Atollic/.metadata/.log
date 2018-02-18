@@ -6413,3 +6413,299 @@ java.lang.NumberFormatException: For input string: "?"
 
 !ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-13 13:49:53.886
 !MESSAGE Unloading product manager
+!SESSION 2018-02-16 17:41:47.178 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-16 17:42:02.493
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-16 17:42:02.505
+!MESSAGE OS info: Linux, 4.4.0-112-generic, amd64
+
+!ENTRY TrueSTUDIO 1 0 2018-02-16 17:42:04.193
+!MESSAGE Target: STM32, Version: 9.0.0, Build date: 20180117-1023, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.0.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2018-02-16 17:42:04.193
+!MESSAGE Workspace: /media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/STM32MarlinFw/Projects/Atollic
+
+!ENTRY org.eclipse.jface 2 0 2018-02-16 17:42:06.520
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-02-16 17:42:06.520
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ec3a4c2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@bb50de6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2018-02-16 17:42:11.525
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2018-02-16 17:42:11.606
+!MESSAGE Code Review is up.
+
+!ENTRY AtollicWebServices 4 0 2018-02-16 17:42:11.641
+!MESSAGE Exception in webservices
+!STACK 0
+java.net.UnknownHostException: sumba.atollic.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.request(AtollicWebServices.java:596)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.getLatestVersion(AtollicWebServices.java:86)
+	at com.atollic.truestudio.productmanager.exposed.ProductManager$1.run(ProductManager.java:196)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY TrueSTUDIO 4 0 2018-02-16 17:42:11.648
+!MESSAGE Failed to get version information: No contact with license server: Failed to contact Atollic.
+
+!ENTRY org.eclipse.ui 4 4 2018-02-16 17:44:22.058
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.TaskList.
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-16 18:07:35.144
+!MESSAGE Unloading product manager
+!SESSION 2018-02-16 18:07:37.832 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-16 18:07:42.305
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-16 18:07:42.314
+!MESSAGE OS info: Linux, 4.4.0-112-generic, amd64
+
+!ENTRY TrueSTUDIO 1 0 2018-02-16 18:07:43.777
+!MESSAGE Target: STM32, Version: 9.0.0, Build date: 20180117-1023, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.0.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2018-02-16 18:07:43.778
+!MESSAGE Workspace: /media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/STM32MarlinFw/Projects/Atollic
+
+!ENTRY org.eclipse.jface 2 0 2018-02-16 18:07:45.640
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-02-16 18:07:45.641
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e1a3d5a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@236b4a44,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2018-02-16 18:07:51.903
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2018-02-16 18:07:51.965
+!MESSAGE Code Review is up.
+
+!ENTRY AtollicWebServices 4 0 2018-02-16 18:07:52.027
+!MESSAGE Exception in webservices
+!STACK 0
+java.net.UnknownHostException: sumba.atollic.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.request(AtollicWebServices.java:596)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.getLatestVersion(AtollicWebServices.java:86)
+	at com.atollic.truestudio.productmanager.exposed.ProductManager$1.run(ProductManager.java:196)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY TrueSTUDIO 4 0 2018-02-16 18:07:52.030
+!MESSAGE Failed to get version information: No contact with license server: Failed to contact Atollic.
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-16 18:16:28.156
+!MESSAGE Unloading product manager
+!SESSION 2018-02-18 18:04:46.313 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -data /media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/STM32MarlinFw/Projects/Atollic -os linux -ws gtk -arch x86_64
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-18 18:04:48.254
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-18 18:04:48.261
+!MESSAGE OS info: Linux, 3.16.0-38-generic, amd64
+
+!ENTRY TrueSTUDIO 1 0 2018-02-18 18:04:50.400
+!MESSAGE Target: STM32, Version: 9.0.0, Build date: 20180117-1023, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.0.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2018-02-18 18:04:50.400
+!MESSAGE Workspace: /media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/STM32MarlinFw/Projects/Atollic
+
+!ENTRY org.eclipse.jface 2 0 2018-02-18 18:04:52.874
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-02-18 18:04:52.874
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77020328,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@45eacb70,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2018-02-18 18:05:02.810
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2018-02-18 18:05:02.925
+!MESSAGE Code Review is up.
+
+!ENTRY AtollicWebServices 4 0 2018-02-18 18:05:02.947
+!MESSAGE Exception in webservices
+!STACK 0
+java.net.UnknownHostException: sumba.atollic.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.request(AtollicWebServices.java:596)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.getLatestVersion(AtollicWebServices.java:86)
+	at com.atollic.truestudio.productmanager.exposed.ProductManager$1.run(ProductManager.java:196)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY TrueSTUDIO 4 0 2018-02-18 18:05:02.949
+!MESSAGE Failed to get version information: No contact with license server: Failed to contact Atollic.
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-18 18:12:17.307
+!MESSAGE Unloading product manager
+!SESSION 2018-02-18 18:12:20.343 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-18 18:12:24.767
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-02-18 18:12:24.788
+!MESSAGE OS info: Linux, 3.16.0-38-generic, amd64
+
+!ENTRY TrueSTUDIO 1 0 2018-02-18 18:12:26.663
+!MESSAGE Target: STM32, Version: 9.0.0, Build date: 20180117-1023, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.0.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2018-02-18 18:12:26.663
+!MESSAGE Workspace: /media/brdirais/Travail_Bruno/08-ProjetPerso/02-3D_Printer/03-GitHub/Marlin4ST/STM32MarlinFw/Projects/Atollic
+
+!ENTRY org.eclipse.jface 2 0 2018-02-18 18:12:28.744
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-02-18 18:12:28.744
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7d17906,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@97beeaf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2018-02-18 18:12:36.835
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2018-02-18 18:12:36.925
+!MESSAGE Code Review is up.
+
+!ENTRY AtollicWebServices 4 0 2018-02-18 18:12:36.971
+!MESSAGE Exception in webservices
+!STACK 0
+java.net.UnknownHostException: sumba.atollic.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.request(AtollicWebServices.java:596)
+	at com.atollic.truestudio.productmanager.exposed.AtollicWebServices.getLatestVersion(AtollicWebServices.java:86)
+	at com.atollic.truestudio.productmanager.exposed.ProductManager$1.run(ProductManager.java:196)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY TrueSTUDIO 4 0 2018-02-18 18:12:36.977
+!MESSAGE Failed to get version information: No contact with license server: Failed to contact Atollic.
