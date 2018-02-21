@@ -235,7 +235,11 @@ void TIM2_IRQHandler(void)
   */
 void TIM3_IRQHandler(void)
 {
+#ifdef NEW_DRIVER_FOR_Z
+	HAL_TIM_IRQHandler(&hTimPwmE2);
+#else
   HAL_TIM_IRQHandler(&hTimPwmZ);
+#endif
 }
 /**
   * @brief  This function handles TIM4 interrupt request.
@@ -265,7 +269,12 @@ void TIM5_IRQHandler(void)
   */
 void TIM1_BRK_TIM9_IRQHandler(void)
 {
-  HAL_TIM_IRQHandler(&hTimPwmE2);
+#ifdef NEW_DRIVER_FOR_Z
+	  HAL_TIM_IRQHandler(&hTimPwmZ);
+#else
+// BDI
+	  HAL_TIM_IRQHandler(&hTimPwmE2);
+#endif
 }
 /**
   * @brief  This function handles TIM1 interrupt request.
@@ -274,13 +283,12 @@ void TIM1_BRK_TIM9_IRQHandler(void)
   */
 void TIM1_UP_TIM10_IRQHandler(void)  
 {
-  HAL_TIM_IRQHandler(&hTimPwmZ);
-//return;
 #ifdef MARLIN
-  HAL_TIM_IRQHandler(&hTimServo);
-#else  
+  //HAL_TIM_IRQHandler(&hTimServo);
+	HAL_TIM_IRQHandler(&hTimPwmE3);
+#else
   HAL_TIM_IRQHandler(&hTimPwmE3);
-#endif  
+#endif
 }
 /**
   * @brief  This function handles TIM1 interrupt request.

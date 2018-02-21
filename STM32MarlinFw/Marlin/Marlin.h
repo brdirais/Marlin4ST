@@ -87,6 +87,18 @@ extern const char echomagic[] PROGMEM;
 
 #define SERIAL_ECHOPAIR(name,value) (serial_echopair_P(PSTR(name),(value)))
 
+
+/* Index motor driver */
+#define MOTOR_DRIVER_X	(0)
+#define MOTOR_DRIVER_Y	(1)
+#define MOTOR_DRIVER_Z	(4)
+#define MOTOR_DRIVER_E0	(3)
+#define MOTOR_DRIVER_E1	(2)
+#define MOTOR_DRIVER_E2	(5)
+#define MOTOR_DRIVER_E3	(6)
+/*--------------------*/
+
+
 void serial_echopair_P(const char* s_P, char v);
 void serial_echopair_P(const char* s_P, int v);
 void serial_echopair_P(const char* s_P, long v);
@@ -120,8 +132,8 @@ void manage_inactivity(bool ignore_stepper_queue = false);
   #define  enable_x() X_ENABLE_WRITE( X_ENABLE_ON)
   #define disable_x() do{ X_ENABLE_WRITE(!X_ENABLE_ON); axis_known_position[X_AXIS] = false; }while(0)
 #else
-  #define  enable_x() BSP_MotorControl_CmdEnable(0);
-  #define disable_x() {BSP_MotorControl_CmdDisable(0); axis_known_position[X_AXIS] = false;}
+  #define  enable_x() BSP_MotorControl_CmdEnable(MOTOR_DRIVER_X);
+  #define disable_x() {BSP_MotorControl_CmdDisable(MOTOR_DRIVER_X); axis_known_position[X_AXIS] = false;}
 #endif
 
 #if HAS_Y2_ENABLE
@@ -131,8 +143,8 @@ void manage_inactivity(bool ignore_stepper_queue = false);
   #define  enable_y() Y_ENABLE_WRITE( Y_ENABLE_ON)
   #define disable_y() do{ Y_ENABLE_WRITE(!Y_ENABLE_ON); axis_known_position[Y_AXIS] = false; }while(0)
 #else
-  #define  enable_y() BSP_MotorControl_CmdEnable(1);
-  #define disable_y() {BSP_MotorControl_CmdDisable(1); axis_known_position[Y_AXIS] = false;}
+  #define  enable_y() BSP_MotorControl_CmdEnable(MOTOR_DRIVER_Y);
+  #define disable_y() {BSP_MotorControl_CmdDisable(MOTOR_DRIVER_Y); axis_known_position[Y_AXIS] = false;}
 #endif
 
 #if HAS_Z2_ENABLE
@@ -142,8 +154,8 @@ void manage_inactivity(bool ignore_stepper_queue = false);
   #define  enable_z() Z_ENABLE_WRITE( Z_ENABLE_ON)
   #define disable_z() do{ Z_ENABLE_WRITE(!Z_ENABLE_ON); axis_known_position[Z_AXIS] = false; }while(0)
 #else
-  #define  enable_z() BSP_MotorControl_CmdEnable(2);
-  #define disable_z() {BSP_MotorControl_CmdDisable(2); axis_known_position[Z_AXIS] = false;}
+  #define  enable_z() BSP_MotorControl_CmdEnable(MOTOR_DRIVER_Z);
+  #define disable_z() {BSP_MotorControl_CmdDisable(MOTOR_DRIVER_Z); axis_known_position[Z_AXIS] = false;}
 #endif
 
 #if ENABLED(MIXING_EXTRUDER)
@@ -174,32 +186,32 @@ void manage_inactivity(bool ignore_stepper_queue = false);
     #define  enable_e0() E0_ENABLE_WRITE( E_ENABLE_ON)
     #define disable_e0() E0_ENABLE_WRITE(!E_ENABLE_ON)
   #else
-    #define  enable_e0() BSP_MotorControl_CmdEnable(3);
-    #define disable_e0() BSP_MotorControl_CmdDisable(3);
+    #define  enable_e0() BSP_MotorControl_CmdEnable(MOTOR_DRIVER_E0);
+    #define disable_e0() BSP_MotorControl_CmdDisable(MOTOR_DRIVER_E0);
   #endif
 
   #if E_STEPPERS > 1 && HAS_E1_ENABLE
     #define  enable_e1() E1_ENABLE_WRITE( E_ENABLE_ON)
     #define disable_e1() E1_ENABLE_WRITE(!E_ENABLE_ON)
   #else
-    #define  enable_e1() BSP_MotorControl_CmdEnable(4);
-    #define disable_e1() BSP_MotorControl_CmdDisable(4);
+    #define  enable_e1() BSP_MotorControl_CmdEnable(MOTOR_DRIVER_E1);
+    #define disable_e1() BSP_MotorControl_CmdDisable(MOTOR_DRIVER_E1);
   #endif
 
   #if E_STEPPERS > 2 && HAS_E2_ENABLE
     #define  enable_e2() E2_ENABLE_WRITE( E_ENABLE_ON)
     #define disable_e2() E2_ENABLE_WRITE(!E_ENABLE_ON)
   #else
-    #define  enable_e2() BSP_MotorControl_CmdEnable(5);
-    #define disable_e2() BSP_MotorControl_CmdDisable(5);
+    #define  enable_e2() BSP_MotorControl_CmdEnable(MOTOR_DRIVER_E2);
+    #define disable_e2() BSP_MotorControl_CmdDisable(MOTOR_DRIVER_E2);
   #endif
 
   #if E_STEPPERS > 3 && HAS_E3_ENABLE
     #define  enable_e3() E3_ENABLE_WRITE( E_ENABLE_ON)
     #define disable_e3() E3_ENABLE_WRITE(!E_ENABLE_ON)
   #else
-    #define  enable_e3() BSP_MotorControl_CmdEnable(6);
-    #define disable_e3() BSP_MotorControl_CmdDisable(6);
+    #define  enable_e3() BSP_MotorControl_CmdEnable(MOTOR_DRIVER_E3);
+    #define disable_e3() BSP_MotorControl_CmdDisable(MOTOR_DRIVER_E3);
   #endif
 
 #endif // !MIXING_EXTRUDER

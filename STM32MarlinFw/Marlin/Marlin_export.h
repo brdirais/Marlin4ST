@@ -51,6 +51,8 @@ void IsrStepperHandler(void);
 void IsrTemperatureHandler(void);
 void TimerStService(void);
 
+void debug_display( char *msg);
+
 
 
 #ifndef M_PI

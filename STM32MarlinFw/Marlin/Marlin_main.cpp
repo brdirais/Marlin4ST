@@ -584,6 +584,9 @@ void serial_echopair_P(const char* s_P, unsigned long v) { serialprintPGM(s_P); 
 void tool_change(const uint8_t tmp_extruder, const float fr_mm_m=0.0, bool no_move=false);
 static void report_current_position();
 
+void debug_display( char *msg)		{ serialprintPGM(msg); }
+
+
 #if ENABLED(DEBUG_LEVELING_FEATURE)
   void print_xyz(const char* prefix, const char* suffix, const float x, const float y, const float z) {
     serialprintPGM(prefix);
@@ -893,14 +896,6 @@ void setup() {
     disableStepperDrivers();
 #endif
 
-#if !defined(DEBUG_ONGOING)
-  #if defined(WITH_RPI_DETECTION)
-    BSP_RPiGpioInit();
-    BSP_RPiWaitUntilReady();
-  #elif defined(WAIT_FOR_RPI)
-    HAL_Delay(30000);  //debug elan for raspberry
-  #endif
-#endif
 
     BSP_UartHwInit(BAUDRATE);
     BSP_UartIfStart();

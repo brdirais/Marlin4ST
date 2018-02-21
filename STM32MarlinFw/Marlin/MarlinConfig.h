@@ -46,7 +46,7 @@
 #include "stm32f4xx_3dprinter_adc.h"
 #include "stm32f4xx_3dprinter_wifi.h"
 #ifdef BICEPHALE
-#include "stm32f4xx_3dprinter_rpi.h"
+//#include "stm32f4xx_3dprinter_rpi.h"
 #endif
 #include "motorcontrol.h"
 #ifdef USE_FAT

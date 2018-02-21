@@ -45,6 +45,10 @@
 #include "stm32f4xx_3dprinter_uart.h"
 #include "l6474.h"
 #include "string.h"
+
+#include "Marlin_export.h"
+
+
 #include <stdio.h>
 
 /* Private defines ----------------------------------------------------------*/
@@ -201,9 +205,13 @@ TIM_HandleTypeDef hTimServo;
 /* Private constant ----------------------------------------------------------*/
 static uint8_t bspTickEnabled = 0;
 
-/* Imported function ----------------------------------------------------------*/
+/* Imported function ---------------------------------------------------------*/
 void BSP_MiscFlagInterruptHandler(void);
 void SystemClock_Config(void);
+
+/* External function ---------------------------------------------------------*/
+extern void debug_display( char *msg);
+
 
 /** @defgroup  STM32F4XX_3DPRINTER_MOTOR_Public_Functions
   * @{
@@ -262,19 +270,22 @@ void BSP_MiscFlagInterruptHandler(void)
     if ((statusRegister & L6474_STATUS_HIZ) == L6474_STATUS_HIZ)
     {
       // HIZ state
-      // Action to be customized            
+      // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_HIZ (power brigdes are disabled)");
     }
 
     /* Check direction bit */
     if ((statusRegister & L6474_STATUS_DIR) == L6474_STATUS_DIR)
     {
       // Forward direction is set
-      // Action to be customized            
+      // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_DIR (forward)");
     }  
     else
     {
       // Backward direction is set
-      // Action to be customized            
+      // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_DIR (backward)");
     }  
 
     /* Check NOTPERF_CMD flag: if set, the command received by SPI can't be performed */
@@ -283,42 +294,48 @@ void BSP_MiscFlagInterruptHandler(void)
     if ((statusRegister & L6474_STATUS_NOTPERF_CMD) == L6474_STATUS_NOTPERF_CMD)
     {
         // Command received by SPI can't be performed
-       // Action to be customized            
+       // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_NOTPERF_CMD (SPI command can't be performed)");
     }  
 
     /* Check WRONG_CMD flag: if set, the command does not exist */
     if ((statusRegister & L6474_STATUS_WRONG_CMD) == L6474_STATUS_WRONG_CMD)
     {
        //command received by SPI does not exist 
-       // Action to be customized          
+       // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_WRONG_CMD (command does not exist)");
     }  
 
     /* Check UVLO flag: if not set, there is an undervoltage lock-out */
     if ((statusRegister & L6474_STATUS_UVLO) == 0)
     {
        //undervoltage lock-out 
-       // Action to be customized          
+       // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_UVLO (undervoltage lock-out)");
     }  
 
     /* Check TH_WRN flag: if not set, the thermal warning threshold is reached */
     if ((statusRegister & L6474_STATUS_TH_WRN) == 0)
     {
       //thermal warning threshold is reached
-      // Action to be customized          
+      // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_TH_WRN (thermal warning threshold)");
     }    
 
     /* Check TH_SHD flag: if not set, the thermal shut down threshold is reached */
     if ((statusRegister & L6474_STATUS_TH_SD) == 0)
     {
       //thermal shut down threshold is reached 
-      // Action to be customized          
+      // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_TH_SD (thermal shut down threshold)");
     }    
 
     /* Check OCD  flag: if not set, there is an overcurrent detection */
     if ((statusRegister & L6474_STATUS_OCD) == 0)
     {
       //overcurrent detection 
-      // Action to be customized          
+      // Action to be customized
+    	debug_display("BSP_MiscFlagInterruptHandler : statusRegister = L6474_STATUS_OCD (overcurrent detection)");
     }
   }
 }
@@ -968,7 +985,9 @@ void BSP_MiscHeatManualInit(uint8_t heatId)
     case 6:
       gpioPin = BSP_HEAT_BED3_PIN;
       gpioPort = BSP_HEAT_BED3_PORT; 
-      break;      
+      break;
+    default:
+    	return;
   }
   /* GPIO configuration */
     GPIO_InitStruct.Pin = gpioPin;
